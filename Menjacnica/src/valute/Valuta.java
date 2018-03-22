@@ -13,6 +13,9 @@ public class Valuta {
 			throw new RuntimeException("Nije lepo unet kurs valute.");
 		kurs.add(k);
 	}
+	public LinkedList<Kursevi> getKurs() {
+		return kurs;
+	}
 	public String getNaziv() {
 		return naziv;
 	}
@@ -29,14 +32,7 @@ public class Valuta {
 			throw new RuntimeException("Naziv valute je null ili prazan String.");
 		this.skraceniNaziv = skraceniNaziv;
 	}
-	public LinkedList<Kursevi> getKurs() {
-		return kurs;
-	}
-	/*public void setKurs(Kursevi kurs) {
-		if(kurs == null)
-			throw new RuntimeException("Nije lepo unet kurs valute.");
-		this.kurs = kurs;
-	}*/
+		
 	@Override
 	public int hashCode() {
 		final int prime = 31;

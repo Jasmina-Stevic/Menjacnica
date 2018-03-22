@@ -8,12 +8,12 @@ import interfejs.InterfejsMenjacnica;
 
 public class Menjacnica implements InterfejsMenjacnica {
 		private LinkedList<Valuta> valute = new LinkedList<Valuta>();
-
+		// U klasi Menjacnica se nalazi lista svih valuta, a svaka valuta pojedinacno sadrzi listu Kurseva 
 	public LinkedList<Valuta> getValute() {
 			return valute;
 		}
 
-		public void setValute(LinkedList<Valuta> valute) {
+	public void setValute(LinkedList<Valuta> valute) {
 			this.valute = valute;
 		}
 
