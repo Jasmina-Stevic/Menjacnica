@@ -13,24 +13,37 @@ public class Kursevi {
 		return kupovni;
 	}
 	public void setKupovni(double kupovni) {
+		if(kupovni < 0)
+			throw new RuntimeException("Kupovni kurs ne moze biti manji od nule.");
 		this.kupovni = kupovni;
 	}
 	public double getSrednji() {
 		return srednji;
 	}
 	public void setSrednji(double srednji) {
+		if(srednji < 0)
+			throw new RuntimeException("Srednji kurs ne moze biti manji od nule.");
 		this.srednji = srednji;
 	}
 	public double getProdajni() {
 		return prodajni;
 	}
 	public void setProdajni(double prodajni) {
+		if(prodajni < 0)
+			throw new RuntimeException("Prodajni kurs ne moze biti manji od nule.");
 		this.prodajni = prodajni;
 	}
 	public GregorianCalendar getDatum() {
 		return datum;
 	}
 	public void setDatum(GregorianCalendar datum) {
+		GregorianCalendar danas = new GregorianCalendar();
+		int dan = danas.DAY_OF_MONTH;
+		int mesec = danas.MONTH;
+		int godina = danas.YEAR;
+		if(datum == null || !(dan == datum.DAY_OF_MONTH && mesec == datum.MONTH && godina == datum.YEAR))
+			throw new RuntimeException("Datum nije tacno unet.");
+		
 		this.datum = datum;
 	}
 	@Override
