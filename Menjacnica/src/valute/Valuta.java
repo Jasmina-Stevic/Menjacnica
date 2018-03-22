@@ -5,9 +5,14 @@ import java.util.LinkedList;
 public class Valuta {
 	private String naziv;
 	private String skraceniNaziv;
-	private Kursevi kurs;
+	private LinkedList<Kursevi> kurs = new LinkedList<Kursevi>(); // Kursevi se u Valuti nalaze u listi
 	
 	
+	public void setKurs(Kursevi k) {
+		if(k == null)
+			throw new RuntimeException("Nije lepo unet kurs valute.");
+		kurs.add(k);
+	}
 	public String getNaziv() {
 		return naziv;
 	}
@@ -24,14 +29,14 @@ public class Valuta {
 			throw new RuntimeException("Naziv valute je null ili prazan String.");
 		this.skraceniNaziv = skraceniNaziv;
 	}
-	public Kursevi getKurs() {
+	public LinkedList<Kursevi> getKurs() {
 		return kurs;
 	}
-	public void setKurs(Kursevi kurs) {
+	/*public void setKurs(Kursevi kurs) {
 		if(kurs == null)
 			throw new RuntimeException("Nije lepo unet kurs valute.");
 		this.kurs = kurs;
-	}
+	}*/
 	@Override
 	public int hashCode() {
 		final int prime = 31;
